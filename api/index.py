@@ -2,14 +2,14 @@ from flask import Flask, jsonify
 
 app = Flask(__name__)
 
-@app.get("/")
+@app.route("/")
 def home():
     return jsonify({
         "message": "API is running",
         "endpoints": ["/api/hello"]
     })
 
-@app.get("/hello")
+@app.route("/hello")
 def hello():
     return jsonify({
         "message": "Hello from Flask!",
